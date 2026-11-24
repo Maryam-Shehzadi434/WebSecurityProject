@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html><head><title>DOM XSS demo (safe)</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<div class="topbar">Education Portal
+  <span style="float:right"><a href="/dashboard">Dashboard</a><a href="/logout">Logout</a></span>
+</div>
+<div class="wrap">
+  <div class="card">
+    <h1>Greeting</h1>
+    <p>Hello, <span id="out">friend</span>!</p>
+  </div>
+</div>
+<script>
+  var hash = decodeURIComponent(location.hash.substring(1));
+  if (hash) {
+    // FIX: use textContent, which inserts the value as plain TEXT.
+    // The browser never treats it as HTML, so no script can run.
+    document.getElementById('out').textContent = hash;
+  }
+</script>
+</body></html>

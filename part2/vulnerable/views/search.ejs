@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html><head><title>Search users</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<div class="topbar">Education Portal
+  <span style="float:right"><a href="/dashboard">Dashboard</a><a href="/logout">Logout</a></span>
+</div>
+<div class="wrap">
+  <div class="card">
+    <h1>Search Students</h1>
+    <form method="GET" action="/search">
+      <input type="text" name="q" value="<%= q || '' %>" placeholder="type a name...">
+      <button type="submit">Search</button>
+    </form>
+    <% if (sql) { %><p class="note">Query run: <code><%= sql %></code></p><% } %>
+    <% if (error) { %><p class="error">SQL error: <%= error %></p><% } %>
+  </div>
+  <% if (q !== undefined) { %>
+  <div class="card">
+    <h2>Results</h2>
+    <table>
+      <tr><th>Username / Column 1</th><th>Email / Column 2</th></tr>
+      <% results.forEach(function(r) { %>
+        <tr><td><%= r.username %></td><td><%= r.email %></td></tr>
+      <% }) %>
+    </table>
+    <% if (results.length === 0) { %><p class="note">No rows.</p><% } %>
+  </div>
+  <% } %>
+</div>
+</body></html>

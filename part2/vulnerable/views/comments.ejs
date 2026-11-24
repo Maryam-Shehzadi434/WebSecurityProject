@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html><head><title>Comments</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<div class="topbar">Education Portal
+  <span style="float:right"><a href="/dashboard">Dashboard</a><a href="/logout">Logout</a></span>
+</div>
+<div class="wrap">
+  <div class="card">
+    <h1>Course Comments</h1>
+    <% comments.forEach(function(c) { %>
+      <div class="comment">
+        <b><%= c.username %>:</b>
+        <!-- VULNERABLE: the dash-form EJS tag below prints the comment WITHOUT
+             escaping, so a saved script tag actually runs in the browser. -->
+        <span><%- c.content %></span>
+      </div>
+    <% }) %>
+  </div>
+  <% if (user) { %>
+  <div class="card">
+    <h2>Add a comment</h2>
+    <form method="POST" action="/comments">
+      <textarea name="content" rows="3"></textarea>
+      <button type="submit">Post comment</button>
+    </form>
+  </div>
+  <% } else { %>
+    <p class="note"><a href="/login">Log in</a> to post a comment.</p>
+  <% } %>
+</div>
+</body></html>

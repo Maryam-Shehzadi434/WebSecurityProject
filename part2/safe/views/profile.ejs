@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html><head><title>Profile</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<div class="topbar">Education Portal
+  <span style="float:right"><a href="/dashboard">Dashboard</a><a href="/logout">Logout</a></span>
+</div>
+<div class="wrap">
+  <div class="card">
+    <h1>My Profile</h1>
+    <p>Username: <b><%= user.username %></b></p>
+    <p>Current email: <b><%= user.email %></b></p>
+    <h2>Change email</h2>
+    <form method="POST" action="/update-email">
+      <%# FIX: send the secret CSRF token with the form %>
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+      <label>New email</label>
+      <input type="email" name="email" value="<%= user.email %>">
+      <button type="submit">Update email</button>
+    </form>
+    <% if (typeof msg !== 'undefined' && msg) { %><p class="ok"><%= msg %></p><% } %>
+  </div>
+</div>
+</body></html>

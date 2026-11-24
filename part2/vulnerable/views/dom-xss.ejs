@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html><head><title>DOM XSS demo</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<div class="topbar">Education Portal
+  <span style="float:right"><a href="/dashboard">Dashboard</a><a href="/logout">Logout</a></span>
+</div>
+<div class="wrap">
+  <div class="card">
+    <h1>Greeting</h1>
+    <p>Hello, <span id="out">friend</span>!</p>
+  </div>
+</div>
+<script>
+  // VULNERABLE: we take untrusted text from the URL hash and write it into the
+  // page with innerHTML. The server never sees it -- the bug is purely in this JS.
+  var hash = decodeURIComponent(location.hash.substring(1)); // text after '#'
+  if (hash) {
+    document.getElementById('out').innerHTML = hash; // innerHTML runs any HTML/script
+  }
+</script>
+</body></html>

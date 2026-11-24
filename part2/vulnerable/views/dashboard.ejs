@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html><head><title>Dashboard</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<div class="topbar">Education Portal
+  <span style="float:right">
+    <a href="/comments">Comments</a>
+    <a href="/search">Search</a>
+    <a href="/profile">Profile</a>
+    <a href="/dom-xss">DOM demo</a>
+    <a href="/logout">Logout</a>
+  </span>
+</div>
+<div class="wrap">
+  <div class="card">
+    <h1>Hello, <%= user.username %>!</h1>
+    <p>Role: <b><%= user.role %></b></p>
+    <p>Email: <%= user.email %></p>
+    <p class="note">Use the links at the top to visit the comments, search, and profile pages.</p>
+  </div>
+</div>
+</body></html>

@@ -1,0 +1,14 @@
+{
+  "name": "eduportal-safe",
+  "version": "1.0.0",
+  "description": "Education Portal - SAFE (hardened) version",
+  "scripts": {
+    "setup": "node db-setup.js",
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.3.0",
+    "express-session": "^1.19.0"
+  }
+}

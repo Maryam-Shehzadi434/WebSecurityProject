@@ -1,0 +1,24 @@
+/* Simple, bright, clean styling for the demo portal */
+* { box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; }
+body { margin: 0; background: #f4f7fb; color: #1b2330; }
+.topbar { background: #2f6fed; color: #fff; padding: 14px 22px; font-size: 20px; font-weight: bold; }
+.topbar a { color: #fff; font-size: 14px; font-weight: normal; margin-left: 16px; text-decoration: none; }
+.wrap { max-width: 760px; margin: 28px auto; padding: 0 16px; }
+.card { background: #fff; border: 1px solid #e2e8f2; border-radius: 10px; padding: 22px 24px; margin-bottom: 18px; box-shadow: 0 1px 3px rgba(0,0,0,.05); }
+h1 { font-size: 22px; margin: 0 0 14px; color: #1b2330; }
+h2 { font-size: 17px; margin: 0 0 10px; color: #2f6fed; }
+label { display: block; margin: 10px 0 4px; font-size: 14px; font-weight: bold; }
+input[type=text], input[type=password], input[type=email], textarea {
+  width: 100%; padding: 9px 11px; border: 1px solid #c7d2e3; border-radius: 6px; font-size: 14px; }
+button { margin-top: 14px; background: #2f6fed; color: #fff; border: none; padding: 10px 18px;
+  border-radius: 6px; font-size: 14px; cursor: pointer; }
+button:hover { background: #2457c0; }
+table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #e2e8f2; font-size: 14px; }
+th { background: #eef3fc; }
+.note { font-size: 13px; color: #607089; margin-top: 8px; }
+.error { color: #c0392b; font-size: 14px; margin-top: 10px; }
+.ok { color: #1e824c; font-size: 14px; margin-top: 10px; }
+.comment { border-bottom: 1px solid #eef; padding: 8px 0; }
+.comment b { color: #2f6fed; }
+code { background: #f0f3f8; padding: 2px 5px; border-radius: 4px; font-size: 13px; }

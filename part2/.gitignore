@@ -1,0 +1,10 @@
+# Node dependencies — re-created by "npm install"
+node_modules/
+
+# The SQLite database — re-created by "node db-setup.js"
+database.db
+
+# Logs and OS files
+*.log
+.DS_Store
+Thumbs.db
